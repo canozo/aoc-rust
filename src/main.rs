@@ -8,6 +8,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     answers.push(event15::day01::solve()?);
     answers.push(event15::day02::solve()?);
+    answers.push(event15::day03::solve()?);
 
     println!("+{:->39}+", '-');
     println!("| {:<5} | {:<3} | {:<10} | {:<10} |", "event", "day", "part 1", "part 2");
