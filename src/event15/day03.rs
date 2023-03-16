@@ -55,17 +55,16 @@ pub fn solve() -> Result<Answer, io::Error> {
         loc_y += diff_y;
 
         let point = Point::new(loc_x, loc_y);
-        let robo_point: Point;
 
-        if robo_turn {
+        let robo_point = if robo_turn {
             santa_loc_x += diff_x;
             santa_loc_y += diff_y;
-            robo_point = Point::new(santa_loc_x, santa_loc_y);
+            Point::new(santa_loc_x, santa_loc_y)
         } else {
             robo_loc_x += diff_x;
             robo_loc_y += diff_y;
-            robo_point = Point::new(robo_loc_x, robo_loc_y);
-        }
+            Point::new(robo_loc_x, robo_loc_y)
+        };
 
         insert_or_modify_house(&mut visited_houses, point);
         insert_or_modify_house(&mut robo_santa_houses, robo_point);

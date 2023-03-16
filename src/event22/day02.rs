@@ -26,15 +26,15 @@ pub fn solve() -> Result<Answer, io::Error> {
 
 fn rps_result(strategy: &str) -> (i32, i32) {
     match strategy {
-        "A Z" => (0 + 3, 6 + 2),
-        "B X" => (0 + 1, 0 + 1),
-        "C Y" => (0 + 2, 3 + 3),
-        "A X" => (3 + 1, 0 + 3),
+        "A Z" => (3, 6 + 2),
+        "B X" => (1, 1),
+        "C Y" => (2, 3 + 3),
+        "A X" => (3 + 1, 3),
         "B Y" => (3 + 2, 3 + 2),
         "C Z" => (3 + 3, 6 + 1),
         "A Y" => (6 + 2, 3 + 1),
         "B Z" => (6 + 3, 6 + 3),
-        "C X" => (6 + 1, 0 + 2),
+        "C X" => (6 + 1, 2),
         _ => panic!("Invalid strategy '{}'", strategy),
     }
 }
