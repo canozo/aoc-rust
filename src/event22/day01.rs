@@ -1,12 +1,11 @@
-use std::fs::File;
-use std::io::{prelude::*, self};
 use aoc_rust::answer::Answer;
+use std::fs::File;
+use std::io::{self, prelude::*};
 
 pub fn solve() -> Result<Answer, io::Error> {
     let mut puzzle = String::new();
 
-    File::open("inputs/event22/day01/input.txt")?
-        .read_to_string(&mut puzzle)?;
+    File::open("inputs/event22/day01/input.txt")?.read_to_string(&mut puzzle)?;
 
     let mut elfs_calories: Vec<isize> = Vec::new();
     let mut calories_count: isize = 0;

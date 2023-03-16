@@ -1,12 +1,11 @@
-use std::fs::File;
-use std::io::{prelude::*, self};
 use aoc_rust::answer::Answer;
+use std::fs::File;
+use std::io::{self, prelude::*};
 
 pub fn solve() -> Result<Answer, io::Error> {
     let mut puzzle = String::new();
 
-    File::open("inputs/event15/day01/input.txt")?
-        .read_to_string(&mut puzzle)?;
+    File::open("inputs/event15/day01/input.txt")?.read_to_string(&mut puzzle)?;
 
     let answer_p1 = puzzle.matches('(').count() as isize - puzzle.matches(')').count() as isize;
 

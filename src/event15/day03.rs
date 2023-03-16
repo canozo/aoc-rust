@@ -1,7 +1,7 @@
+use aoc_rust::answer::Answer;
 use std::collections::HashMap;
 use std::fs::File;
-use std::io::{prelude::*, self};
-use aoc_rust::answer::Answer;
+use std::io::{self, prelude::*};
 
 #[derive(Hash, Eq, PartialEq, Debug)]
 struct Point {
@@ -16,16 +16,13 @@ impl Point {
 }
 
 fn insert_or_modify_house(passport: &mut HashMap<Point, i32>, point: Point) {
-    passport.entry(point)
-        .and_modify(|p| { *p += 1 })
-        .or_insert(1);
+    passport.entry(point).and_modify(|p| *p += 1).or_insert(1);
 }
 
 pub fn solve() -> Result<Answer, io::Error> {
     let mut puzzle = String::new();
 
-    File::open("inputs/event15/day03/input.txt")?
-        .read_to_string(&mut puzzle)?;
+    File::open("inputs/event15/day03/input.txt")?.read_to_string(&mut puzzle)?;
 
     let mut loc_x: isize = 0;
     let mut loc_y: isize = 0;
@@ -36,13 +33,9 @@ pub fn solve() -> Result<Answer, io::Error> {
     let mut robo_loc_x: isize = 0;
     let mut robo_loc_y: isize = 0;
 
-    let mut visited_houses = HashMap::from([
-        (Point::new(0, 0), 1),
-    ]);
+    let mut visited_houses = HashMap::from([(Point::new(0, 0), 1)]);
 
-    let mut robo_santa_houses = HashMap::from([
-        (Point::new(0, 0), 1),
-    ]);
+    let mut robo_santa_houses = HashMap::from([(Point::new(0, 0), 1)]);
 
     let mut robo_turn = false;
 

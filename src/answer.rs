@@ -7,6 +7,9 @@ pub struct Answer {
 
 impl Answer {
     pub fn print(self) {
-        println!("| {:<5} | {:<3} | {:<10} | {:<10} |", self.event, self.day, self.part1, self.part2);
+        println!(
+            "| {:<5} | {:<3} | {:<10} | {:<10} |",
+            self.event, self.day, self.part1, self.part2
+        );
     }
 }
