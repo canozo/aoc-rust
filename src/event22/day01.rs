@@ -32,3 +32,15 @@ pub fn solve() -> Result<Answer, io::Error> {
         part2: answer_p2.to_string(),
     })
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_event22_day01() {
+        let answer = solve().unwrap();
+        assert_eq!(answer.part1, String::from("68802"));
+        assert_eq!(answer.part2, String::from("205370"));
+    }
+}

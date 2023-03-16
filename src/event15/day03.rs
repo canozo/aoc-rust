@@ -79,3 +79,15 @@ pub fn solve() -> Result<Answer, io::Error> {
         part2: robo_santa_houses.len().to_string(),
     })
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_event15_day03() {
+        let answer = solve().unwrap();
+        assert_eq!(answer.part1, String::from("2572"));
+        assert_eq!(answer.part2, String::from("2631"));
+    }
+}

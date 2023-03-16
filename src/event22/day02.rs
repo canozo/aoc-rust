@@ -38,3 +38,15 @@ fn rps_result(strategy: &str) -> (i32, i32) {
         _ => panic!("Invalid strategy '{}'", strategy),
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_event22_day02() {
+        let answer = solve().unwrap();
+        assert_eq!(answer.part1, String::from("11603"));
+        assert_eq!(answer.part2, String::from("12725"));
+    }
+}
