@@ -18,6 +18,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         event22::day04::solve()?,
         event22::day05::solve()?,
         event22::day06::solve()?,
+        event22::day07::solve()?,
     ];
 
     println!("+{:->39}+", '-');
