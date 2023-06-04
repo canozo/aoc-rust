@@ -3,19 +3,23 @@ use std::fs::File;
 use std::io::{self, prelude::*};
 use std::str::Lines;
 
+const DISK_SIZE: usize = 70000000;
+const MIGRATION_SIZE: usize = 30000000;
+
 struct Directory {
     path: String,
     size: usize,
 }
 
 impl std::fmt::Display for Directory {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "Directory {{ size={:>9}, path={} }}", self.size, self.path)
+    fn fmt(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(
+            formatter,
+            "Directory {{ size={:>9}, path={} }}",
+            self.size, self.path
+        )
     }
 }
-
-const DISK_SIZE: usize = 70000000;
-const MIGRATION_SIZE: usize = 30000000;
 
 pub fn solve() -> Result<Answer, io::Error> {
     let mut puzzle = String::new();
