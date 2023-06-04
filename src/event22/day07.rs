@@ -10,7 +10,7 @@ struct Directory {
 
 impl std::fmt::Display for Directory {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "Directory {{ size={:0>8}, path={} }}", self.size, self.path)
+        write!(f, "Directory {{ size={:>9}, path={} }}", self.size, self.path)
     }
 }
 
